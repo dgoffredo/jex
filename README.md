@@ -43,3 +43,8 @@ How
 ---
 `jex` requires Python 3.7.  The makefile just copies the source file renamed to
 `./jex` and marks it executable.
+
+### Known Issues
+Since python generators treat a return value of `None` as meaning "no more
+values," and since the `json` module decodes null as `None`, `jex` will
+incorrectly fail to output any null values that are matched.
