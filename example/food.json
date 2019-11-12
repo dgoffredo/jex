@@ -1,0 +1,11 @@
+{
+    "food": {
+        "vegetable": [
+            {"name": "squash", "tasty": false},
+            {"name": "carrot", "tasty": true}
+        ],
+        "fruit": [
+            {"name": "apple", "tasty": true}
+        ]
+    }
+}
