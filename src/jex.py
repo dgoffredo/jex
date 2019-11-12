@@ -41,7 +41,12 @@ def matches(parts, subject):
 
 
 def parse(pattern):
-    return pattern.split('.')
+    # Corner case:  If the pattern is empty, then splitting on "." would yield
+    # `[""]` instead of `[]`.
+    if len(pattern) == 0:
+        return []
+    else:
+        return pattern.split('.')
 
 
 def extract(pattern, subject):
@@ -74,6 +79,6 @@ if __name__ == '__main__':
     result = extract(options.pattern, json.load(sys.stdin))
 
     if result is not None:
-        json.dump(result, sys.stdout)
+        json.dump(result, sys.stdout, indent=4, sort_keys=True)
 
     print()  # for the newline
